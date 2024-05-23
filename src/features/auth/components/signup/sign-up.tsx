@@ -136,7 +136,10 @@ const SignupScreen = React.memo(() => {
           icon="arrow-right"
           size={40}
           mode="outlined"
+          iconColor={!isOver16 ? '#888' : 'white'}
+          style={[styles.buttonSubmit, !isOver16 && {borderColor: '#888'}]}
           onPress={handleSubmit(handleSignUp)}
+          disabled={!isOver16}
         />
       )}
     </View>
@@ -221,8 +224,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  icon: {
-    padding: 10,
+  buttonSubmit: {
+    borderRadius: 100,
+    borderColor: '#647FFF',
   },
   checkboxContainer: {
     flexDirection: 'row',
